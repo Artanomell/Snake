@@ -1,0 +1,13 @@
+C:\Users\Snoop Dogg\source\repos\Snake\Snake\bin\Release\o.exe.config
+C:\Users\Snoop Dogg\source\repos\Snake\Snake\bin\Release\o.exe
+C:\Users\Snoop Dogg\source\repos\Snake\Snake\bin\Release\o.pdb
+C:\Users\Snoop Dogg\source\repos\Snake\Snake\obj\Release\MainWindow.baml
+C:\Users\Snoop Dogg\source\repos\Snake\Snake\obj\Release\MainWindow.g.cs
+C:\Users\Snoop Dogg\source\repos\Snake\Snake\obj\Release\App.g.cs
+C:\Users\Snoop Dogg\source\repos\Snake\Snake\obj\Release\o_MarkupCompile.cache
+C:\Users\Snoop Dogg\source\repos\Snake\Snake\obj\Release\o.g.resources
+C:\Users\Snoop Dogg\source\repos\Snake\Snake\obj\Release\Snake.Properties.Resources.resources
+C:\Users\Snoop Dogg\source\repos\Snake\Snake\obj\Release\Snake.csproj.GenerateResource.cache
+C:\Users\Snoop Dogg\source\repos\Snake\Snake\obj\Release\Snake.csproj.CoreCompileInputs.cache
+C:\Users\Snoop Dogg\source\repos\Snake\Snake\obj\Release\o.exe
+C:\Users\Snoop Dogg\source\repos\Snake\Snake\obj\Release\o.pdb
