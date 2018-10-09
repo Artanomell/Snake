@@ -14,6 +14,7 @@ namespace Snake
     public partial class MainWindow : Window
     {
         const int SIZE = 16;
+        int snakeLength = 1;
 
         DispatcherTimer timer;
         Random random;
@@ -27,7 +28,7 @@ namespace Snake
         int snakeStepX;
         int snakeStepY;
 
-        int totals = 5;
+        int totals = 10;
         int coins = 0;
 
         public MainWindow()
@@ -43,7 +44,7 @@ namespace Snake
 
             timer = new DispatcherTimer();
             timer.Tick += Timer_Tick;
-            timer.Interval = new System.TimeSpan(50000);
+            timer.Interval = new System.TimeSpan(100000);
             timer.IsEnabled = true;
             AddFood();
 
@@ -90,13 +91,13 @@ namespace Snake
 
         void MoveSnake()
         {
-            snake.X += snakeStepX;
-            snake.Y += snakeStepY;
+            snake.X += snakeStepX * 3;
+            snake.Y += snakeStepY * 3;
 
             Ellipse ellipse = CreateEllipse(snake, Brushes.HotPink);
-            if (Map.Children.Count > 1)
+            if (Map.Children.Count > snakeLength)
             {
-                Map.Children.RemoveAt(1);
+                Map.Children.RemoveAt(snakeLength);
             }
             Map.Children.Insert(1, ellipse);
         }
@@ -110,6 +111,7 @@ namespace Snake
                 Map.Children.RemoveAt(0);
             }
             Map.Children.Insert(0, ellipse);
+            snakeLength += 2;
         }
 
         private Ellipse CreateEllipse(Point point, Brush brush)

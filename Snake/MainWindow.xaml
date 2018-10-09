@@ -6,8 +6,8 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Title="Snake" Height="450" Width="800" Loaded="Window_Loaded">
-    <Canvas x:Name="Map">
+        Title="Snake" Height="500" Width="500" Loaded="Window_Loaded">
+    <Canvas x:Name="Map" Margin="0,0,4,3">
         
     </Canvas>
 </Window>
