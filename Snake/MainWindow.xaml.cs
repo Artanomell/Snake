@@ -27,6 +27,9 @@ namespace Snake
         int snakeStepX;
         int snakeStepY;
 
+        int totals = 5;
+        int coins = 0;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -46,7 +49,7 @@ namespace Snake
 
             KeyDown += MainWindow_KeyDown;
 
-            snake = new Point(width / 2,  height / 2);
+            snake = new Point(width / 2, height / 2);
             snakeStepX = 0;
             snakeStepY = 0;
             MoveSnake();
@@ -67,6 +70,22 @@ namespace Snake
         private void Timer_Tick(object sender, System.EventArgs e)
         {
             MoveSnake();
+
+            if (OutOfScreen(snake))
+            {
+                GameOver();
+            }
+            if (IsCrossed(snake, food))
+            {
+                if (++coins == totals)
+                {
+                    GameWin();
+                }
+                else
+                {
+                    AddFood();
+                }
+            }
         }
 
         void MoveSnake()
@@ -84,8 +103,6 @@ namespace Snake
 
         void AddFood()
         {
-            
-
             food = new Point(random.Next(width - SIZE), random.Next(height - SIZE));
             Ellipse ellipse = CreateEllipse(food, Brushes.Khaki);
             if (Map.Children.Count > 0)
@@ -107,6 +124,29 @@ namespace Snake
             Canvas.SetTop(ellipse, point.Y);
 
             return ellipse;
+        }
+
+        bool IsCrossed(Point A, Point B)
+        {
+            return Math.Abs(A.X - B.X) < SIZE &&
+                   Math.Abs(A.Y - B.Y) < SIZE;
+        }
+
+        bool OutOfScreen(Point A)
+        {
+            return A.X <= 0 || A.X >= width - SIZE ||
+                   A.Y <= 0 || A.Y >= height - SIZE;
+        }
+
+        void GameOver()
+        {
+            MessageBox.Show("You lose", "Game over");
+            Close();    
+        }
+
+        void GameWin()
+        {
+            MessageBox.Show("You win!", "Game over");
         }
     }
 }
