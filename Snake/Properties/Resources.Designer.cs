@@ -59,5 +59,15 @@ namespace Snake.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Google_Noto_Emoji_Animals_Nature_22285_snake {
+            get {
+                object obj = ResourceManager.GetObject("Google_Noto_Emoji_Animals_Nature_22285_snake", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }
